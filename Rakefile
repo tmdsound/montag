@@ -73,7 +73,11 @@ task :post do
   end
 end # task :post
 
+<<<<<<< HEAD
 # Usage: rake page name="about.html"		
+=======
+# Usage: rake page name="about.html"
+>>>>>>> d709b8af8e917612d889231e93339b5d7e918c65
 # You can also specify a sub-directory path.
 # If you don't specify a file extention we create an index.html at the path specified
 desc "Create a new page."
