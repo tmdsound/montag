@@ -59,13 +59,13 @@
             <nav id="mainmenu" class="mainmenu">
           <ul>
             <li class="logo-wrapper"><a href="{{ BASE_PATH }}/index.html"><img src="{{ BASE_PATH }}/logo36.png" alt="Multipurpose Twitter Bootstrap Template"></a></li>
-            {% for link in site.data.links %}
+            {% for block in site.data.blocks %}
         {% assign active = nil %}
-        {% if page.url contains link.url %}
+        {% if page.url contains block.url %}
             {% assign active = 'active' %}
         {% endif %}
         <li class="{% if forloop.first %}{% endif %} {{ active }} {% if forloop.last %}{% endif %}">
-            <a href="{{ link.url }}">{{ link.title }}</a>
+            <a href="{{ block.url }}">{{ block.title }}</a>
         </li>
     {% endfor %}
             <!-- <li class="active">
