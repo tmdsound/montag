@@ -73,11 +73,7 @@ task :post do
   end
 end # task :post
 
-<<<<<<< HEAD
-# Usage: rake page name="about.html"		
-=======
 # Usage: rake page name="about.html"
->>>>>>> d709b8af8e917612d889231e93339b5d7e918c65
 # You can also specify a sub-directory path.
 # If you don't specify a file extention we create an index.html at the path specified
 desc "Create a new page."
@@ -101,30 +97,6 @@ task :page do
     post.puts "{% include JB/setup %}"
   end
 end # task :page
-
-desc "Create a new page."
-task :page_new do
-  name = ENV["name"] || "new-page.md"
-  filename = File.join(SOURCE, "#{name}")
-  filename = File.join(filename, "index.html") if File.extname(filename) == ""
-  title = File.basename(filename, File.extname(filename)).gsub(/[\W\_]/, " ").gsub(/\b\w/){$&.upcase}
-  if File.exist?(filename)
-    abort("rake aborted!") if ask("#{filename} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
-  end
-  
-  mkdir_p File.dirname(filename)
-  puts "Creating new page_new: #{filename}"
-  open(filename, 'w') do |post|
-    post.puts "---"
-    post.puts "layout: page_c"
-    post.puts "title: \"#{title}\""
-    post.puts 'description: ""'
-    post.puts 'category: ""'
-    post.puts "---"
-    post.puts "{% include JB/setup %}"
-  end
-end # task :page_cat
-
 
 desc "Launch preview environment"
 task :preview do
@@ -337,10 +309,3 @@ end
 
 #Load custom rake scripts
 Dir['_rake/*.rake'].each { |r| load r }
-
-
-
-
-
-
-

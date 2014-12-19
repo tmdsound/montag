@@ -6,11 +6,7 @@
    url: foto1.html
 
  - title: Калькулятор
-<<<<<<< HEAD
-   url: calc/index.php
-=======
    url: calc/index.html
->>>>>>> d709b8af8e917612d889231e93339b5d7e918c65
    
  - title: FAQ
    url: faq.html
